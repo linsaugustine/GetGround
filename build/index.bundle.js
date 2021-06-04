@@ -35431,7 +35431,7 @@ function App() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ getStudies)
+/* harmony export */   "default": () => (/* binding */ getBooks)
 /* harmony export */ });
 /* harmony import */ var _ApiClients_books__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ApiClients/books */ "./src/ApiClients/books.ts");
 
@@ -35456,7 +35456,7 @@ function failure(error) {
         }
     };
 }
-function getStudies(page, itemsPerPage) {
+function getBooks(page, itemsPerPage) {
     return function (dispatch) {
         dispatch(start());
         return _ApiClients_books__WEBPACK_IMPORTED_MODULE_0__.getBooks(page, itemsPerPage)
@@ -35552,7 +35552,7 @@ var BooksClass = /** @class */ (function (_super) {
                     break;
             }
             _this.setState({ pageNumber: newPage });
-            _this.props.getStudies(newPage, itemsPerPage);
+            _this.props.getBooks(newPage, itemsPerPage);
             _this.setPageQueryString(_this.query, newPage);
         };
         _this.state = { pageNumber: parseInt(((_a = _this.query.get("page")) === null || _a === void 0 ? void 0 : _a.toString()) || "1") };
@@ -35563,7 +35563,7 @@ var BooksClass = /** @class */ (function (_super) {
             this.query.set("page", "1");
             window.location.href = window.location.href + "?" + this.query.toString();
         }
-        this.props.getStudies(this.state.pageNumber, itemsPerPage);
+        this.props.getBooks(this.state.pageNumber, itemsPerPage);
     };
     BooksClass.prototype.render = function () {
         var _this = this;
@@ -35599,7 +35599,7 @@ var mapStateToProps = function (state) {
     return { books: books, totalPages: Math.ceil(count / itemsPerPage), isFetching: isFetching };
 };
 var mapDispatchToProps = function (dispatch) {
-    return (0,redux__WEBPACK_IMPORTED_MODULE_5__.bindActionCreators)({ getStudies: _actionCreators_books__WEBPACK_IMPORTED_MODULE_3__.default }, dispatch);
+    return (0,redux__WEBPACK_IMPORTED_MODULE_5__.bindActionCreators)({ getBooks: _actionCreators_books__WEBPACK_IMPORTED_MODULE_3__.default }, dispatch);
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_2__.connect)(mapStateToProps, mapDispatchToProps)(BooksClass));
 
