@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux"
-import getStudies from "../actionCreators/books"
+import getBooks from "../actionCreators/books"
 import { Book } from "../Types"
 import "./Books.scss"
 
@@ -26,7 +26,7 @@ const Books: React.FC = (props): JSX.Element => {
     }, [])
 
     useEffect(() => {
-        dispatch(getStudies(pageNumber, itemsPerPage))
+        dispatch(getBooks(pageNumber, itemsPerPage))
     }, [pageNumber])
 
     const handlePageClick = (action: string) => {

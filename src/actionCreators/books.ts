@@ -25,7 +25,7 @@ function failure(error: any): Action {
   }
 }
 
-export default function getStudies(page: number, itemsPerPage: number): any {
+export default function getBooks(page: number, itemsPerPage: number) {
   return (dispatch: any) => {
     dispatch(start())
     return API.getBooks(page, itemsPerPage)

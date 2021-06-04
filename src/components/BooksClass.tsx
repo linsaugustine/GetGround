@@ -2,7 +2,7 @@ import { PureComponent } from "react"
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
 import { Book } from "../Types"
-import getStudies from "../actionCreators/books"
+import getBooks from "../actionCreators/books"
 import "./Books.scss"
 
 type OwnState = {
@@ -16,7 +16,7 @@ type StateProps = {
 }
 
 type DispatchProps = {
-    getStudies: (page: number, itemsPerPage: number) => any
+    getBooks: (page: number, itemsPerPage: number) => any
 }
 
 type Props = StateProps & DispatchProps
@@ -35,7 +35,7 @@ export class BooksClass extends PureComponent<Props, OwnState> {
             this.query.set("page", "1")
             window.location.href = `${window.location.href}?${this.query.toString()}`
         }
-        this.props.getStudies(this.state.pageNumber, itemsPerPage)
+        this.props.getBooks(this.state.pageNumber, itemsPerPage)
     }
 
     setPageQueryString = (queryStr: URLSearchParams, page: number) => {
@@ -64,7 +64,7 @@ export class BooksClass extends PureComponent<Props, OwnState> {
         }
     
         this.setState({ pageNumber: newPage })
-        this.props.getStudies(newPage, itemsPerPage)
+        this.props.getBooks(newPage, itemsPerPage)
         this.setPageQueryString(this.query, newPage)
       }
 
@@ -121,7 +121,7 @@ const mapStateToProps = (state: any) => {
 }
 
 const mapDispatchToProps = (dispatch: any): DispatchProps => {
-    return bindActionCreators({getStudies}, dispatch)
+    return bindActionCreators({getBooks}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksClass)
