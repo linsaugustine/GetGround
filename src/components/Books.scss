@@ -1,0 +1,56 @@
+.loading {
+  text-align: center;
+  color: chartreuse;
+  background-color: burlywood;
+  font-size: 100px;
+}
+
+.books {
+  .title {
+    max-width: 500px;
+    word-wrap: break-word;
+  }
+
+  button {
+    margin: 5px;
+    border-radius: 10px;
+    min-width: 100px;
+  }
+
+  input[type="number"] {
+    margin: 10px;
+    text-align: center;
+    padding-left: 15px;
+    max-width: 50px;
+  }
+
+  .books-details {
+    margin: 10px;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+
+  thead {
+    background-color: darkgray;
+  }
+
+  tbody {
+    background-color: rgb(228, 228, 228);
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 10px, 0, 0, 10px;
+  }
+
+  .author {
+    max-width: 200px;
+    padding: 10px, 0, 0, 10px;
+    word-wrap: break-word;
+  }
+
+  .nav {
+    padding-left: 100px;
+  }
+}
